@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Football Fact</h1>
+        <p id="fact"></p>
+        <button id="nextFactBtn">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The modern game of football originated in England in the 19th century, but variations of the game have been played for centuries in different cultures.",
+            "The FIFA World Cup is the most prestigious football tournament, held every four years. The first tournament took place in 1930 in Uruguay.",
+            "The record for the most goals scored in a single World Cup tournament is held by Just Fontaine, who scored 13 goals for France in 1958.",
+            "Football is the most popular sport in the world, with an estimated 4 billion fans globally.",
+            "The English Premier League is considered one of the most competitive and popular football leagues in the world, attracting top talent from around the globe.",
+            "The Fédération Internationale de Football Association (FIFA) was founded in 1904 and is responsible for overseeing international competitions and the rules of the game.",
+            "The Ballon d'Or is an annual football award presented by France Football, recognizing the best male football player in the world.",
+            "The system of yellow and red cards was introduced in the 1970 World Cup to help referees manage player conduct on the field.",
+            "The offside rule is one of the most debated rules in football, designed to prevent players from gaining an unfair advantage by being closer to the opponent's goal than the ball and the second-to-last defender when the ball is played to them.",
+            "Women's football has grown significantly in popularity, with the FIFA Women's World Cup being held every four years since 1991, showcasing the best female talent in the sport."
+        ];
+
+        let currentFactIndex = 0;
+
+        function showFact() {
+            const factElement = document.getElementById('fact');
+            factElement.textContent = facts[currentFactIndex];
+        }
+
+        document.getElementById('nextFactBtn').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            showFact();
+        });
+
+        // Show the first fact on page load
+        showFact();
+    </script>
+</body>
+</html>
+
